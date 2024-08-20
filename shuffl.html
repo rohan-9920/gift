@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #0c192c;
+            color: white;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+            overflow: hidden;
+        }
+
+        .bubbles {
+            position: absolute;
+            /* Or relative if you want it to scroll with the page */
+            display: flex;
+        }
+
+        .bubbles span {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            background: #4fc3dc;
+            margin: 0 4px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 10px #4fc3dc44,
+                0 0 50px #4fc3dc,
+                0 0 100px #4fc3dc;
+            animation: animate 15s linear infinite;
+            animation-duration: calc(100s / var(--i));
+        }
+
+        .bubbles span:nth-child(even) {
+            background: #ff2d75;
+            box-shadow: 0 0 0 10px #ff2d7544,
+                0 0 50px #ff2d75,
+                0 0 100px #ff2d75;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: translateY(100vh) scale(0);
+            }
+
+            100% {
+                transform: translateY(-10vh) scale(1);
+            }
+        }
+
+        .heading{
+            position: absolute;
+            top: -.1%;
+        }
+
+        .box-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(4, 100px);
+            gap: 10px;
+            background: #0c192c;
+            padding: 10px;
+            border-radius: 10px;
+            animation: boxAnimation 5s ease-in-out infinite;
+            /* Adjusting the width based on the grid size */
+            width: 340px;
+            /* 3 boxes (100px each) + 2 gaps (10px each) */
+        }
+
+        .box {
+            background: white;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: red;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .box a{
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        @keyframes boxAnimation {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            }
+
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bubbles">
+            <!-- Bubble elements omitted for brevity -->
+            <span style="--i:11"></span>
+            <span style="--i:12"></span>
+            <span style="--i:24"></span>
+            <span style="--i:10"></span>
+            <span style="--i:14"></span>
+            <span style="--i:23"></span>
+            <span style="--i:18"></span>
+            <span style="--i:16"></span>
+            <span style="--i:19"></span>
+            <span style="--i:20"></span>
+            <span style="--i:22"></span>
+            <span style="--i:25"></span>
+            <span style="--i:28"></span>
+            <span style="--i:21"></span>
+            <span style="--i:15"></span>
+            <span style="--i:13"></span>
+            <span style="--i:26"></span>
+            <span style="--i:17"></span>
+            <span style="--i:13"></span>
+            <span style="--i:28"></span>
+            <span style="--i:11"></span>
+            <span style="--i:12"></span>
+            <span style="--i:24"></span>
+            <span style="--i:10"></span>
+            <span style="--i:14"></span>
+            <span style="--i:23"></span>
+            <span style="--i:18"></span>
+            <span style="--i:16"></span>
+            <span style="--i:19"></span>
+            <span style="--i:20"></span>
+            <span style="--i:22"></span>
+            <span style="--i:25"></span>
+            <span style="--i:28"></span>
+            <span style="--i:21"></span>
+            <span style="--i:15"></span>
+            <span style="--i:13"></span>
+            <span style="--i:26"></span>
+            <span style="--i:17"></span>
+            <span style="--i:13"></span>
+            <span style="--i:28"></span>
+        </div>
+
+        <div class="heading">
+            <h1>Welcome to the gift page</h1>
+        </div>
+        <div class="box-container">
+            <div class="box"><a href="" target="_blank">GIFT</a></div>
+            <div class="box"><a href="" target="_blank">GIFT</a></div>
+            <div class="box"><a href="" target="_blank">GIFT</a></div>
+            <div class="box"><a href="" target="_blank">GIFT</a></div>
+            <div class="box"><a href="" target="_blank">GIFT</a></div>
+            <div class="box"><a href="" target="_blank">GIFT</a></div>
+            <div class="box"><a href="" target="_blank">GIFT</a></div>
+            <div class="box"><a href="" target="_blank">GIFT</a></div>
+            <div class="box"><a href="" target="_blank">GIFT</a></div>
+            <div class="box"><a href="" target="_blank">GIFT</a></div>
+            <div class="box"><a href="" target="_blank">GIFT</a></div>
+            <div class="box"><a href="" target="_blank">GIFT</a></div>
+        </div>
+    </div>
+
+    <script>
+        
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.box a');
+            const links_array = ['lol.html','lol.html','lol.html','lol.html','lol.html','lol.html','lol.html','lol.html','lol.html','lol.html','lol.html','https://rohan-9920.github.io/Angie/']
+
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the default link behavior
+
+                // Generate a random index for the links_array
+                const randomIndex = Math.floor(Math.random() * links_array.length);
+                
+                // Set the href attribute to a random URL from the array
+                link.href = links_array[randomIndex];
+
+                // Optionally, redirect to the new URL
+                window.location.href = link.href;
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>
